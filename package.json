@@ -24,7 +24,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "7.10.5",
+    "@babel/core": "7.22.6",
     "@babel/plugin-transform-for-of": "7.10.4",
     "colors": "1.4.0",
     "commitplease": "3.2.0",
@@ -44,7 +44,7 @@
     "grunt-npmcopy": "0.2.0",
     "grunt-terser": "2.0.0",
     "gzip-js": "0.3.2",
-    "husky": "4.2.5",
+    "husky": "4.3.7",
     "jsdom": "19.0.0",
     "karma": "6.4.1",
     "karma-browserstack-launcher": "1.6.0",
@@ -60,7 +60,7 @@
     "playwright-webkit": "1.30.0",
     "promises-aplus-tests": "2.1.2",
     "q": "1.5.1",
-    "qunit": "2.10.1",
+    "qunit": "2.11.1",
     "raw-body": "2.4.1",
     "requirejs": "2.3.6",
     "rimraf": "3.0.2",
@@ -81,7 +81,9 @@
     "test:selector-native": "grunt test:prepare && grunt custom:-selector && grunt karma:main",
     "test:slim": "grunt test:prepare && grunt custom:slim && grunt karma:main",
     "test": "npm run test:slim && npm run test:no-deprecated && npm run test:selector-native && grunt && grunt test:slow && grunt karma:main && grunt karma:esmodules && grunt karma:amd",
-    "jenkins": "npm run test:browserless"
+    "jenkins": "npm run test:browserless",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "commitplease": {
     "nohook": true,
@@ -118,5 +120,9 @@
       "commit-msg": "commitplease .git/COMMIT_EDITMSG",
       "pre-commit": "grunt lint:newer qunit_fixture"
     }
+  },
+  "snyk": true,
+  "dependencies": {
+    "@snyk/protect": "latest"
   }
 }
