@@ -62,7 +62,7 @@
     "q": "1.5.1",
     "qunit": "2.10.1",
     "raw-body": "2.4.1",
-    "requirejs": "2.3.6",
+    "requirejs": "2.3.7",
     "rimraf": "3.0.2",
     "rollup": "2.21.0",
     "sinon": "7.3.1",
